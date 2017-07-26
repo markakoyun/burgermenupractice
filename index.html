@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Burger</title>
+    <style>
+    .menu{
+ padding: 20px 5px 5px 5px;
+  height: 50px;
+  cursor:pointer;
+}
+
+
+.burger , .burger::before ,.burger::after{
+  background-color: aquamarine;
+  width: 35px;
+  height : 3px;
+  border-radius:20px;
+  transition: all 0.3s ease;
+}
+
+.burger::before ,.burger::after{
+  content:" ";
+  display: block;
+}
+
+.burger::after{
+  transform: translateY(11px);
+}
+
+.burger::before{
+  transform: translateY(7px);
+}
+
+.open .burger{
+  transform: rotate(45deg);
+}
+
+.open .burger::before{
+  opacity: 0;
+}
+
+.open .burger::after{
+  transform: translateY(-2px) rotate(90deg);
+}
+    </style>
+</head>
+<body>
+    <div class="menu">
+      <div class="burger">      
+    </div>
+</div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+
+<script>
+    $(document).ready(function(){
+        $('.menu').click(function(){
+            $(this).toggleClass('open');
+        });
+    });
+</script>
+</html>
